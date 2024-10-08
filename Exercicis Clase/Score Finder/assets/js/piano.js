@@ -37,9 +37,10 @@ function CERCADOR(array){
         new Nota("Mi","normal"),new Nota("Fa","normal"),new Nota("Fa","normal"),
         new Nota("Sol","normal"),new Nota("Sol","normal"),new Nota("La","Sostenido"),new Nota("La","Sostenido")];
     
-    let partituras1 =[new Nota("Re","normal"),new Nota("Mi","normal"),
-        new Nota("Fa","normal"),new Nota("Fa","normal"),new Nota("Fa","normal"),
-        new Nota("Sol","normal"),new Nota("Sol","normal"),new Nota("La","Sostenido"),new Nota("La","Sostenido")];
+    let partituras1 =[new Nota("Do","normal"),new Nota("Do","normal"),
+        new Nota("Re","normal"),new Nota("Do","normal"),new Nota("Fa","normal"),
+        new Nota("Mi","normal"),new Nota("Do","normal"),new Nota("Do","Sostenido"),new Nota("Re","Normal"),new Nota("Do","Normal"),
+        new Nota("Sol","Normal"),new Nota("Fa","Normal")];
 
     
     let listapartituras = [partituras,partituras1];
@@ -54,8 +55,13 @@ function CERCADOR(array){
                 numeronotas++;
                 
             }else{
-    
-                numeronotas=0;
+                if (listapartituras[index][i].nota == array[0].nota && listapartituras[index][i].tipus == array[0].tipus) {
+
+                    numeronotas =1;
+                } else {
+                    numeronotas=0;
+                }
+                
             }if (numeronotas==array.length) {
                 
                 switch (index) {
@@ -75,8 +81,8 @@ function CERCADOR(array){
     console.log(resultado);
 }
 
+ADDCERCA("Do","normal")
 ADDCERCA("Re","normal")
-ADDCERCA("Mi","normal")
-ADDCERCA("Fa","normal")
+
 
 CERCADOR(busquedanotas)
